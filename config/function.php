@@ -104,19 +104,69 @@ if(!function_exists('getUEditorConfig'))
         ];
     }
 }
-if(!function_exists('PKeyword'))
+
+if(!function_exists('pKeyword'))
 {
-    function PKeyword($string)
+    function pKeyword($string,$bool=false)
     {
-        $keyword = \app\models\Pagekeyword::getKeyword();
-        if($keyword)
+        $kw = \app\models\Pkey::getKeyword();
+        if($kw)
         {
 
-            foreach ((array)$keyword as $k => $v) {
-                if (empty($v)) continue;
-                $string = str_replace($v,'<a href='.$k.' target=_blank>'.$v.'</a>',$string);
+            if($bool)
+            {
+                foreach ($kw as $k => $v) {
+                    if(empty($v)) continue;
+                    $string = str_replace('<a href="' . $k . '" target="_blank">' . $v . '</a>', $v, $string);
+                }
+            }else
+            {
+                foreach ($kw as $k => $v) {
+                    if(empty($v)) continue;
+                    $string = str_replace($v, '<a href="' . $k . '" target="_blank">' . $v . '</a>', $string);
+                }
             }
         }
         return $string;
+    }
+}
+/**
+ * 二级分类NAV的ITEMS
+ * 当bool等于TRUE时返回所在模块的分类列表，否则是内容列表
+ */
+if(!function_exists('getModelItems'))
+{
+    function getModelItems($model,$bool=false)
+    {
+        $items = [];
+        if(empty($bool))
+        {
+            $controller = '\\app\\models\\'.(ucfirst($model));
+            $tree = $controller::getCategory();
+
+            foreach ($tree as $k => $v) {
+                $params = array_merge(['site/'.$model,'id' => $v['id']]);
+                $label = $v['name'];
+                $url = yii\helpers\Url::to($params);
+                $items[] = [
+                    'label' => $label,
+                    'url' => $url,
+                ];
+            }
+        }else{
+            $tree = \app\models\Category::getCategoryList($model);
+            foreach ($tree as $k => $v) {
+                $params = array_merge(['site/'.$model,'cat_id' => $v['id']]);
+                $label = $v['name'];
+                $url = yii\helpers\Url::to($params);
+                $items[] = [
+                    'label' => $label,
+                    'url' => $url,
+                ];
+            }
+        }
+
+        return $items;
+
     }
 }

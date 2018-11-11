@@ -3,20 +3,18 @@
 namespace app\controllers\bemanage;
 
 use Yii;
-use app\models\News;
-use app\models\NewsSearch;
+use app\models\Pkey;
+use app\models\PkeySearch;
 use yii\base\ErrorException;
-use yii\data\ActiveDataProvider;
-use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * PkeyController implements the CRUD actions for Pkey model.
  */
-class NewsController extends Controller
+class PkeyController extends Controller
 {
     public $layout = 'admin';
     /**
@@ -40,28 +38,21 @@ class NewsController extends Controller
             ],
         ];
     }
-    public function actions()
-    {
-        return [
-            'upload' => [
-                'class' => 'kucha\ueditor\UEditorAction',
-                'config' => getUEditorConfig(),
-            ]
-        ];
-    }
+
+
     /**
-     * Lists all News models.
+     * Lists all Pkey models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new NewsSearch();
+        $searchModel = new PkeySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         //可编辑列操作   保存数据   开始
         if (Yii::$app->request->post('hasEditable')) {
             $controller = ucfirst(replaceBackend(Yii::$app->controller->id));
             $id = Yii::$app->request->post('editableKey');
-            $model = News::findOne(['id' => $id]);
+            $model = Pkey::findOne(['id' => $id]);
             $posted = current($_POST[$controller]);
             $post = [$controller => $posted];
             $output = '';
@@ -85,37 +76,33 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single Pkey model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('view', ['model' => $model]);
-        }
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Pkey model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      * @throws ErrorException
      */
     public function actionCreate()
     {
-        $model = new News;
+        $model = new Pkey();
 
         if ($model->load(Yii::$app->request->post())) {
             //保存图片
             $image = UploadedFile::getInstance($model, 'imgUrl');
             if(isset($image)) {
                 $ext = $type = substr(strrchr($image->name, '.'), 1);
-                $model->imgUrl = Yii::$app->params['uploadNewsPath'] . date('YmdHis', time()).mt_rand(1000,9999).".{$ext}";
+                $model->imgUrl = Yii::$app->params['uploadPkeyPath'] . date('YmdHis', time()).mt_rand(1000,9999).".{$ext}";
                 $path = '.' . $model->imgUrl;
             }
             if($model->save()){
@@ -134,7 +121,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Pkey model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param $id
      * @return string|\yii\web\Response
@@ -149,7 +136,7 @@ class NewsController extends Controller
             $image = UploadedFile::getInstance($model, 'imgUrl');
             if(isset($image)) {
                 $ext = $type = substr(strrchr($image->name, '.'), 1);
-                $model->imgUrl = Yii::$app->params['uploadNewsPath'] . date('YmdHis', time()).mt_rand(1000,9999).".{$ext}";
+                $model->imgUrl = Yii::$app->params['uploadPkeyPath'] . date('YmdHis', time()).mt_rand(1000,9999).".{$ext}";
                 $path = '.' . $model->imgUrl;
             } else {
                 //编辑时图片没变化，保留原图
@@ -171,7 +158,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Pkey model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -191,7 +178,7 @@ class NewsController extends Controller
         $ids = getVal(app('request')->post(), 'ids');
         if(empty($ids)) echoJson(60001,\Yii::t('common','None select any info'));
 
-        $rs = News::deleteAll(['id'=>$ids]);
+        $rs = Pkey::deleteAll(['id'=>$ids]);
         if(empty($rs)) echoJson(60002,\Yii::t('common','Batch deleting failure'));
 
         echoJson(200,\Yii::t('common','Batch deletions'));
@@ -208,22 +195,22 @@ class NewsController extends Controller
         $status = getVal($post, 'status');
         if(empty($ids)) echoJson(60001,\Yii::t('common','None select any info'));
 
-        $rs = News::updateAll(['status' => $status],['in','id',$ids]);
+        $rs = Pkey::updateAll(['status' => $status],['in','id',$ids]);
         if(empty($rs)) echoJson(60002,\Yii::t('common','Batch modification state is failure'));
 
         echoJson(200,\Yii::t('common','Batch modification state is successful'));
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Pkey model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Pkey the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Pkey::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -146,14 +146,14 @@ return [
             '/bemanage/process/delete-all',
             '/bemanage/process/change-status',
             '/bemanage/process/*',
-            '/bemanage/pagekeyword/index',
-            '/bemanage/pagekeyword/view',
-            '/bemanage/pagekeyword/create',
-            '/bemanage/pagekeyword/update',
-            '/bemanage/pagekeyword/delete',
-            '/bemanage/pagekeyword/delete-all',
-            '/bemanage/pagekeyword/change-status',
-            '/bemanage/pagekeyword/*',
+            '/bemanage/pkey/index',
+            '/bemanage/pkey/view',
+            '/bemanage/pkey/create',
+            '/bemanage/pkey/update',
+            '/bemanage/pkey/delete',
+            '/bemanage/pkey/delete-all',
+            '/bemanage/pkey/change-status',
+            '/bemanage/pkey/*',
         ],
     ],
     '/admin/*' => [
@@ -532,28 +532,28 @@ return [
     '/bemanage/process/*' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/index' => [
+    '/bemanage/pkey/index' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/view' => [
+    '/bemanage/pkey/view' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/create' => [
+    '/bemanage/pkey/create' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/update' => [
+    '/bemanage/pkey/update' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/delete' => [
+    '/bemanage/pkey/delete' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/delete-all' => [
+    '/bemanage/pkey/delete-all' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/change-status' => [
+    '/bemanage/pkey/change-status' => [
         'type' => 2,
     ],
-    '/bemanage/pagekeyword/*' => [
+    '/bemanage/pkey/*' => [
         'type' => 2,
     ],
 ];

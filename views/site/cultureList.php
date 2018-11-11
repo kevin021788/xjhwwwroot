@@ -1,18 +1,17 @@
 <?php
 use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
-
-$this->title = Yii::t('home','News List').' | '.$this->params['config']['WEB_SITE_TITLE'];
-$banner = \app\models\Banner::getBanner('news');
+$this->title = Yii::t('home','Culture List').'-'.strtr((empty($model['keyword']) ? $this->params['config']['WEB_SITE_KEYWORD'] : $model['keyword']), ',', '|').'-'.$this->params['config']['WEB_SITE_TITLE'];
+$banner = \app\models\Banner::getBanner('culture');
 ?>
-<div class="news w1180">
+<div class="culture w1180">
     <?= $this->render('banner',['banner'=>$banner])?>
-    <h1 class="title"><span><?=Yii::t('home','News')?></span></h1>
+    <h1 class="title"><span><?=Yii::t('home','Culture')?></span></h1>
     <?php
     if($category)
     {
         ?>
-        <div class="category">
+        <div class="category col-xs-12 col-md-2">
             <ul>
                 <?php
                 $catId = Yii::$app->request->get('cat_id', '');
@@ -20,7 +19,7 @@ $banner = \app\models\Banner::getBanner('news');
                 {
                     if(empty($v)) continue;
                     ?>
-                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-6 col-sm-2 text-center"><a href="<?=yiiUrl('/site/news?cat_id='.$v['id'])?>"><?=$v['name']?></a></li>
+                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-12 col-md-12 text-center"><a href="<?=yiiUrl('/site/culture?cat_id='.$v['id'])?>"><?=$v['name']?></a></li>
                     <?php
                 }
                 ?>
@@ -29,10 +28,10 @@ $banner = \app\models\Banner::getBanner('news');
         <?php
     }
     ?>
-    <ul class="f-cb news-list">
+    <ul class="f-cb culture-list">
         <?php foreach($list as $v): ?>
         <li class=" col-xs-12 col-sm-12">
-            <a href="<?php echo yiiUrl('/site/news-detail?id='.$v['id'])?>">
+            <a href="<?php echo yiiUrl('/site/culture-detail?id='.$v['id'])?>">
                 <p class="pic col-xs-12 col-sm-3">
                     <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="bg">
                     <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="picture">

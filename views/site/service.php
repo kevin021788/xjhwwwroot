@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-<div class="site-about">
+<div class="site-service">
     <?= $this->render('banner',['banner'=>$banner])?>
     <h1 class="title"><span><?= Html::encode($this->title) ?></span></h1>
     <div class="category col-xs-12 col-md-2">

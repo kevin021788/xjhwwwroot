@@ -8,13 +8,12 @@ use kartik\widgets\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = Yii::t('common', 'News');
+$this->title = Yii::t('common', 'Pkey');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-index">
+<div class="pkey-index">
     <?php Pjax::begin(); ?>
     <div class="box-header with-border">
-        <!--        --><?//= Html::a(Yii::t('app', 'Create Project'), ['create'], ['class' => 'btn btn-success btn-flat']) ?>
     </div>
     <div class="box-body table-responsive no-padding">
 
@@ -37,20 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
             [
-                'attribute' => 'categoryId',
-                'value' => 'category.name',
-                'filter' => \app\models\Category::getCategory($this->context->id),
-            ],
-            [
-                'attribute' => 'imgUrl',
-                'headerOptions' => ['class' => 'col-md-1'],
-                'value' => 'imgUrl',
-                'format' => [
-                    'image',
-                    [
-                        'width' => '30;',
-                        'height' => '30'
-                    ]
+                'attribute' => 'url',
+                'class' => 'kartik\grid\EditableColumn',
+                'editableOptions'=>[
+                    'asPopover' => false,
+                    'inputType'=> Editable::INPUT_TEXTAREA,//只需添加如下代码
+                    'options' => [
+                        'rows' => 4,
+                    ],
                 ],
             ],
             [

@@ -5,13 +5,13 @@ use kartik\detail\DetailView;
 use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\News */
+/* @var $model app\models\Pkey */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Pkey', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-view">
+<div class="pkey-view">
 
     <?= DetailView::widget([
         'model' => $model,
@@ -23,13 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'type'=>DetailView::TYPE_INFO,
         ],
         'attributes' => [
-//             'id',
-//            'cat_id',
+             'id',
             'name',
-            'imgUrl:url',
-            'desc',
-            'content:ntext',
-//            'status',
+            'url:url',
+            'sort',
+            'status',
             'created_at:datetime',
             'updated_at:datetime',
         ],
