@@ -19,7 +19,7 @@ $banner = \app\models\Banner::getBanner('culture');
                 {
                     if(empty($v)) continue;
                     ?>
-                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-12 col-md-12 text-center"><a href="<?=yiiUrl('/site/culture?cat_id='.$v['id'])?>"><?=$v['name']?></a></li>
+                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-12 col-md-12 text-center"><a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id,'cat_id'=>$v['id']])?>"><?=$v['name']?></a></li>
                     <?php
                 }
                 ?>

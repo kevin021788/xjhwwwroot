@@ -53,7 +53,6 @@ class SiteController extends Controller
         $banner = \app\models\Banner::getBanner('home');
 
 
-        $product = Partner::getIndexList(4);
 
         $serviceCate = Category::getCategoryList('service');
 
@@ -255,7 +254,61 @@ class SiteController extends Controller
             ]);
         }
     }
+    /**
+     * 案例列表
+     * @return string
+     */
+    public function actionPartner()
+    {
+        $md = 'cases';
+        $banner = \app\models\Banner::getBanner($md);
+        $category = Category::getCategoryList($md);
+        $model = new Partner();
+        $ret = $model::getList();
+        if($ret['success'])
+        {
+            $list = $ret['list'];
+            $pages = $ret['pages'];
+            return $this->render('partnerList',[
+                'model' => $model,
+                'list' => $list,
+                'pages' => $pages,
+                'banner' => $banner,
+                'category' => $category,
+            ]);
+        }
+        else
+        {
+            return $this->render('partnerList',[
+                'list' => [],
+                'banner' => $banner,
+                'category' => $category,
+            ]);
+        }
 
+    }
+
+    /**
+     * 案例详情
+     * @param $id
+     * @return string|\yii\web\Response
+     */
+    public function actionPartnerDetail($id)
+    {
+        $md = 'cases';
+        $banner = \app\models\Banner::getBanner($md);
+        $category = Category::getCategoryList($md);
+        $model = Partner::getDetail($id);
+        if (empty($model)) {
+            return $this->redirect(['cases']);
+        } else {
+            return $this->render('partnerDetail', [
+                'model' => $model,
+                'banner' => $banner,
+                'category' => $category,
+            ]);
+        }
+    }
 
     //------------------------------------------------------------------------//
 

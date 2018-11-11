@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     color: #0d0d0d;
-    font-family: "Arial";
+    font-family: "黑体";
 }
 ul,ol {list-style: none outside none;}
 .w1180{
@@ -166,7 +166,7 @@ h1.title{
 
 h1.title span {
     padding:0 1em;
-    background: url(/img/bg.jpg) repeat-y center;
+    background: #ffffff;
 
 }
 .category ul li {
@@ -481,35 +481,37 @@ h1.title span {
     padding:2em 0;
 }
 .navbar-inverse {
-    /*padding: 0.3em 0;*/
-    /*height: 7.5em;*/
-    /*width: 100%;*/
-    /*margin: 0px auto;*/
-    background: #cacbcb !important;
-    border: 1px #cacbcb solid  !important;
-    /*opacity: 0.8;*/
-    /*text-align: center;*/
-    /*line-height: 1.9em;*/
+    background: url(/img/topbg.jpg) repeat-x !important;
+    border: 1px #efefef solid  !important;
+    height: 130px;
+    padding-top: 40px;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    background: #cacbcb !important;
+    background: #FFFFFF !important; margin-top: 30px;
 }
-.page-top {margin-top: 5.5em;}
-
-/**导航条 */
+.page-top {margin-top: 130px;}
+.welcome {top: 0; position: fixed;  overflow: hidden;}
+.h40 {z-index: 9998; height: 40px; line-height: 40px;}
+.white {color: #FFFFFF !important;}
+.welcome .title { width: 920px;}
+.welcome .add-home { float:right; width: 240px;}
+.welcome .add-home a { color: #ffffff;}
+    /**导航条 */
 .navbar-nav {
-    margin-top: 1em !important;
+    /*margin-top: 1em !important;*/
     color: #0d0d0d;
     font-weight: bold;
     font-size: 1.25em;
     list-style: none;
     float: left;
 }
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus { background: #d4965d !important;}
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle { background: #000 !important;}
 
 /**LOGO*/
 .navbar-brand {
-    width: 12.5em;
-    height: 4.3em !important;
+    /*width: 12.5em;*/
+    /*height: 4.3em !important;*/
     display: block;
     text-align: center;
 }
@@ -520,58 +522,13 @@ h1.title span {
 }
 
 body {
-    background: #ececec url(../img/bg.jpg) repeat-y center;
+    /*background: #ececec url(../img/bg.jpg) repeat-y center;*/
     overflow-x: hidden;
 }
-.footer { clear:both}
-
-.footer .footer-nav {
-    background: url(../img/footerbg.jpg) repeat-x;
-    width: 100%;
-    height: 70px;
-    display: block;
-}
-.footer .footer-nav .tool {/*width: 67em;*/ margin: 0 auto; padding-left: 0; padding-right: 0}
-.footer .footer-nav .tool li {
-    float: left;
-    background: url(../img/footerbg.jpg) repeat-x;
-    line-height: 70px;
-    list-style: none;
-    font-weight: bold;
-    padding: 0 0.8em 0 0.8em;
-    overflow: hidden;
-}
-.footer .footer-nav .tool li i { width: 46px; height: 48px;
-    display: block;
-    float: left;
-    line-height: 50px; margin-top: 10px;
-}
-.footer .footer-nav .tool li i.tel {
-    background: url(../img/tel.png) no-repeat center left;
-
-}
-
-.footer .footer-nav .tool li i.mail {
-    background: url(../img/mail.png) no-repeat center left;
-}
-
-.footer .footer-nav .tool li i.address {
-    background: url(../img/address.png) no-repeat center left;
-}
-.footer .footer-logo {
-    text-align: center;
-    height: 12em !important;
-    display: block;
-    background: url(../img/footer-logo.png) center no-repeat;
-    margin: 10px 0;
-}
-
-
-.footer .footer-copyright {
-    background: #000000;
-    /*height: 50px;*/
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 50px;
-    font-weight: bold;
-}
+.footer { background: #1e1c1d !important;}
+.footer .footer-1{ padding: 10px; text-align: center}
+.footer .footer-1 .footer-logo { background: url(/img/logo.jpg) no-repeat; width: 209px; height: 90px;}
+.footer .footer-1 .footer-nav { }
+.footer .footer-1 .footer-code {}
+.footer .footer-1 .footer-copyright {}
+.footer .footer-2{ background: #181617; line-height: 50px;}
