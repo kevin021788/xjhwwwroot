@@ -8,6 +8,7 @@
                 'items' => [
                     // ['label' => '功能菜单', 'options' => ['class' => 'header']],
                     ['label' => '系统设置', 'icon' => 'fa fa-cogs', 'url' => ['/bemanage/config']],
+                    ['label' => '站内关键字', 'icon' => 'fa fa-cogs', 'url' => ['/bemanage/pagekeyword']],
                     ['label' => '分类管理', 'icon' => 'fa fa-newspaper-o', 'url' => ['/bemanage/category']],
                     ['label' => '轮播图管理', 'icon' => 'fa fa-image', 'url' => ['/bemanage/banner']],
                     ['label' => '关于我们', 'icon' => 'fa fa-flag-o', 'url' => ['/bemanage/about']],

@@ -70,6 +70,11 @@ return [
     'Cases List' => '案例列表',
     'Cases' => '案例赏析',
 
+    //站内关键字
+    'Create Pagekeyword' => '创建站内关键字',
+    'Pagekeyword List' => '站内关键字列表',
+    'Pagekeyword' => '站内关键字',
+
     //伙伴
     'Create Partner' => '创建伙伴',
     'Partner List' => '伙伴列表',

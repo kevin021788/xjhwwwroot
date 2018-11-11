@@ -104,3 +104,19 @@ if(!function_exists('getUEditorConfig'))
         ];
     }
 }
+if(!function_exists('PKeyword'))
+{
+    function PKeyword($string)
+    {
+        $keyword = \app\models\Pagekeyword::getKeyword();
+        if($keyword)
+        {
+
+            foreach ((array)$keyword as $k => $v) {
+                if (empty($v)) continue;
+                $string = str_replace($v,'<a href='.$k.' target=_blank>'.$v.'</a>',$string);
+            }
+        }
+        return $string;
+    }
+}

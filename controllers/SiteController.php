@@ -7,7 +7,8 @@ use app\models\About;
 use app\models\Banner;
 use app\models\Category;
 use app\models\Contact;
-use app\models\Product;
+use app\models\Pagekeyword;
+use app\models\Partner;
 use app\models\Service;
 use Yii;
 use app\models\News;
@@ -47,7 +48,7 @@ class SiteController extends Controller
         $config = Yii::$app->cache->get('config_'.\app\components\message\Language::getLanguageNum());
         $banner = \app\models\Banner::getBanner('home');
 
-        $product = Product::getIndexList(4);
+        $Partner = Partner::getIndexList(4);
 
         $serviceCate = Category::getCategoryList('service');
 
@@ -58,7 +59,7 @@ class SiteController extends Controller
         return $this->render('index', [
             'config' => $config,
             'banner' => $banner,
-            'product' => $product,
+            'Partner' => $Partner,
             'serviceCate' => $serviceCate,
             'about' => $about,
             'news' => $news,
@@ -151,21 +152,21 @@ class SiteController extends Controller
     }
 
     /**
-     * 产品列表
+     * 伙伴列表
      * @return string
      */
-    public function actionProduct()
+    public function actionPartner()
     {
-        $md = 'product';
+        $md = 'partner';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = new Product();
+        $model = new Partner();
         $ret = $model::getList();
         if($ret['success'])
         {
             $list = $ret['list'];
             $pages = $ret['pages'];
-            return $this->render('productList',[
+            return $this->render('partnerList',[
                 'model' => $model,
                 'list' => $list,
                 'pages' => $pages,
@@ -175,7 +176,7 @@ class SiteController extends Controller
         }
         else
         {
-            return $this->render('productList',[
+            return $this->render('partnerList',[
                 'list' => [],
                 'banner' => $banner,
                 'category' => $category,
@@ -185,22 +186,25 @@ class SiteController extends Controller
     }
 
     /**
-     * 产品详情
+     * 伙伴详情
      * @param $id
      * @return string|\yii\web\Response
      */
-    public function actionProductDetail($id)
+    public function actionPartnerDetail($id)
     {
-        $md = 'product';
+        $md = 'partner';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = Product::getDetail($id);
+        $model = Partner::getDetail($id);
+
         if (empty($model)) {
-            return $this->redirect(['product']);
+            return $this->redirect(['partner']);
         } else {
-            return $this->render('productDetail', [
+            return $this->render('partnerDetail', [
                 'model' => $model,
                 'banner' => $banner,
+                'keyword' => $model['keyword'],
+                'description' => $model['description'],
                 'category' => $category,
             ]);
         }

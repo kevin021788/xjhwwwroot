@@ -2,15 +2,17 @@
 
 /* @var $this yii\web\View */
 
-$this->title = $model['name'].' | '.Yii::t('home','Product List').' | '.$this->params['config']['WEB_SITE_TITLE'];
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['product']];
+$this->title = $model['name'].'-'.strtr($model['keyword'],',','|').'-'.$this->params['config']['WEB_SITE_TITLE'];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['Partner']];
 $this->params['breadcrumbs'][] = $model['name'];
+$this->params['keyword'] = $model['keyword'];
+$this->params['description'] = $model['description'];
 ?>
 
 <div class="news-info w1180">
     <?= $this->render('banner',['banner'=>$banner])?>
 
-    <h1 class="title"><span><?=Yii::t('home','Product Display')?></span></h1>
+    <h1 class="title"><span><?=Yii::t('home','Partner')?></span></h1>
     <?php
     if($category)
     {
@@ -23,7 +25,7 @@ $this->params['breadcrumbs'][] = $model['name'];
                 {
                     if(empty($v)) continue;
                     ?>
-                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-6 col-sm-2 text-center"><a href="<?=yiiUrl('/site/product?cat_id='.$v['id'])?>"><?=$v['name']?></a></li>
+                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-6 col-sm-2 text-center"><a href="<?=yiiUrl('/site/partner?cat_id='.$v['id'])?>"><?=$v['name']?></a></li>
                     <?php
                 }
                 ?>
@@ -39,7 +41,7 @@ $this->params['breadcrumbs'][] = $model['name'];
         </div>
     </div>
     <div class="news-info-con">
-        <?=$model['content']?>
+        <?=PKeyword($model['content'])?>
 
     </div>
 
