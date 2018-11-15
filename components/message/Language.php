@@ -13,13 +13,11 @@ class Language
 {
 
     public static $lang = [
-        'en-US' => 2,
-        'fa' => 3,
+        'zh-CN' => 1,
     ];
 
     public static $languages = [
-        'en-US' => 'English (US)',
-        'fa' => 'Farsi',
+        'zh-CN' => '简体中文',
     ];
 
     public static function getLanguageItems()

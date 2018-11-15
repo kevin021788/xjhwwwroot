@@ -45,10 +45,6 @@ $category = isset($related['category'])?ArrayHelper::getValue($related['category
 
             'desc'=>['type'=> Form::INPUT_TEXTAREA, 'options'=>['placeholder'=> Yii::t('common','Please input describe ...')]],
 
-            'video'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=> Yii::t('common','Please input video Url eg:http://xxx.com/asdf/adf ...'), 'maxlength'=>255]],
-
-            'hkey'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=> Yii::t('common','Please input home key eg:a,b,c ...'), 'maxlength'=>255]],
-
             'content'=>['type'=>Form::INPUT_WIDGET, 'widgetClass'=>'kucha\ueditor\UEditor', 'options'=>[
                 'clientOptions' => [
                 ]
@@ -65,11 +61,16 @@ $category = isset($related['category'])?ArrayHelper::getValue($related['category
                     'showUpload' => false,
                 ]
             ]],
+
+
+            'keyword'=>['type'=> Form::INPUT_TEXTAREA, 'options'=>['placeholder'=> Yii::t('common','Please input seo keyword ...'), 'maxlength'=>255]],
+            'description'=>['type'=> Form::INPUT_TEXTAREA, 'options'=>['placeholder'=> Yii::t('common','Please input seo description ...'), 'maxlength'=>255]],
+
         ]
 
     ]);
 
-    echo Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary','style'=>'align:center']);
+    echo Html::submitButton($model->isNewRecord ? (Yii::t('common','Create')) : (Yii::t('common','Update')), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary','style'=>'align:center']);
     ActiveForm::end(); ?>
 
 

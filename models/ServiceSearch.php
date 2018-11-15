@@ -7,7 +7,6 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
-
 /**
  * ServiceSearch represents the model behind the search form of `app\models\Service`.
  */
@@ -20,7 +19,7 @@ class ServiceSearch extends Service
     {
         return [
             [['status'], 'integer'],
-            [['name', 'desc', 'created_at', 'categoryId'], 'safe'],
+            [['name', 'desc', 'created_at'], 'safe'],
         ];
     }
 
@@ -64,12 +63,7 @@ class ServiceSearch extends Service
             'id' => $this->id,
             "{$tableName}.status" => $this->status,
         ]);
-        if($this->categoryId)
-        {
-            $query->andFilterWhere([
-                'category.id' => $this->categoryId,
-            ]);
-        }
+
         if($this->created_at)
         {
             $beginTime = strtotime($this->created_at);
@@ -80,7 +74,6 @@ class ServiceSearch extends Service
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(["{$tableName}.language" => Language::getLanguageNum()])
             ->andFilterWhere(['like', 'desc', $this->desc]);
-        $query->joinWith('category');
 
         return $dataProvider;
     }

@@ -15,6 +15,8 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property string $name
+ * @property string $keyword
+ * @property string $description
  * @property string $slug
  * @property string $imgUrl
  * @property string $desc
@@ -77,11 +79,10 @@ class Contact extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content'], 'string'],
+            [['content', 'desc'], 'string'],
             [['status', 'sort', 'created_at', 'updated_at', 'language'], 'integer'],
             [['name'], 'string', 'max' => 50],
-            [['slug'], 'string', 'max' => 250],
-            [['imgUrl', 'desc'], 'string', 'max' => 255],
+            [['imgUrl','slug','keyword','description'], 'string', 'max' => 255],
         ];
     }
 
@@ -93,6 +94,8 @@ class Contact extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('home','ID'),
             'name' => Yii::t('home','Name'),
+            'keyword' => Yii::t('home','Keyword'),
+            'description' => Yii::t('home','Description'),
             'slug' => Yii::t('home','Slug'),
             'imgUrl' => Yii::t('home','Img Url'),
             'desc' => Yii::t('home','Desc'),

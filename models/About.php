@@ -15,10 +15,10 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property string $name
+ * @property string $keyword
+ * @property string $description
  * @property string $slug
  * @property string $imgUrl
- * @property string $video
- * @property string $hkey
  * @property string $desc
  * @property string $content
  * @property integer $sort
@@ -79,11 +79,10 @@ class About extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content', 'desc', 'video', 'hkey'], 'string'],
+            [['content', 'desc'], 'string'],
             [['status', 'sort', 'created_at', 'updated_at', 'language'], 'integer'],
             [['name'], 'string', 'max' => 50],
-            [['slug'], 'string', 'max' => 250],
-            [['imgUrl'], 'string', 'max' => 255],
+            [['imgUrl','slug','keyword','description'], 'string', 'max' => 255],
         ];
     }
 
@@ -95,10 +94,10 @@ class About extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('home','ID'),
             'name' => Yii::t('home','Name'),
+            'keyword' => Yii::t('home','Keyword'),
+            'description' => Yii::t('home','Description'),
             'slug' => Yii::t('home','Slug'),
             'imgUrl' => Yii::t('home','Img Url'),
-            'video' => Yii::t('home','Video'),
-            'hkey' => Yii::t('home','hHey'),
             'desc' => Yii::t('home','Desc'),
             'content' => Yii::t('home','Content'),
             'sort' => Yii::t('home','Sort'),

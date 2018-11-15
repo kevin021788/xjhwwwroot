@@ -31,6 +31,10 @@ return [
     'Select a state ...' => '选择一个状态……',
     'Select a Category ...' => '选择一个分类……',
     'Select Tags ...' => '选择标签……',
+    'Please input name ...' => '请输入名称……',
+    'Please input describe ...' => '请输入简介……',
+    'Please input seo keyword ...' => '请输入SEO关键字……',
+    'Please input seo description ...' => '请输入SEO描述……',
     'category Name' => '所属分类',
     'Sort' => '排序',
     'Status' => '状态',
@@ -58,6 +62,35 @@ return [
     'Projects' => '项目列表',
     'Project' => '项目',
     'Create Project' => '创建项目',
+
+
+    //案例
+    'Create Cases' => '创建案例',
+    'Cases List' => '案例列表',
+    'Cases' => '案例赏析',
+
+    //伙伴
+    'Create Partner' => '创建伙伴',
+    'Partner List' => '伙伴列表',
+    'Partner' => '合作伙伴',
+
+    //文化
+    'Create Culture' => '创建文化',
+    'Culture List' => '文化列表',
+    'Culture' => '文化传播',
+
+
+    //关于我们
+    'Create About' => '创建关于我们',
+    'About List' => '关于我们列表',
+    'About' => '关于我们',
+
+
+
+    //联系我们
+    'Create Contact' => '创建联系我们',
+    'Contact List' => '联系我们列表',
+    'Contact' => '联系我们',
 
 
     //计划任务
@@ -97,7 +130,7 @@ return [
     'Category Name' => '分类名称',
     'Model Name' => '模块名称',
     'Categories' => '分类列表',
-    'Category' => '项目',
+    'Category' => '分类',
     'Create Category' => '创建分类',
 
     //Tag

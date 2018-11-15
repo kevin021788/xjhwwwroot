@@ -16,14 +16,7 @@ use app\components\message\Language;
         </a>
 
         <div class="navbar-custom-menu">
-            <?php
-            $menuItems[] = Language::getLanguageItems();
-            echo \yii\bootstrap\Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'encodeLabels' => false,
-                'items' => $menuItems,
-            ]);
-            ?>
+
             <ul class="nav navbar-nav">
               <?php if(!Yii::$app->user->isGuest): ?>
                 <li class="dropdown user user-menu">

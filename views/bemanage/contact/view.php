@@ -1,44 +1,48 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use kartik\detail\DetailView;
+use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Contact', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="contact-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
     <?= DetailView::widget([
         'model' => $model,
+        'condensed'=>false,
+        'hover'=>true,
+        'mode'=>Yii::$app->request->get('edit')=='t' ? DetailView::MODE_EDIT : DetailView::MODE_VIEW,
+        'panel'=>[
+            'heading'=>$this->title,
+            'type'=>DetailView::TYPE_INFO,
+        ],
         'attributes' => [
-            'id',
+//             'id',
+//            'cat_id',
             'name',
-            'slug',
             'imgUrl:url',
             'desc',
             'content:ntext',
-            'status',
-            'created_at',
-            'updated_at',
-            'language',
+            'keyword',
+            'description',
+//            'status',
+            'created_at:datetime',
+            'updated_at:datetime',
         ],
+        'deleteOptions'=>[
+            'url'=>['delete', 'id' => $model->id],
+            'data'=>[
+                'confirm'=>Yii::t('app', 'Are you sure you want to delete this item?'),
+                'method'=>'post',
+            ],
+        ],
+        'enableEditMode'=>false,
     ]) ?>
 
 </div>

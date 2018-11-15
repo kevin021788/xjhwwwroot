@@ -16,5 +16,5 @@ require(__DIR__ . '/components/helpers/helper.php');
 $config = require(__DIR__ . '/config/web.php');
 
 $application = new yii\web\Application($config);
-$application -> language = isset(\Yii::$app->session['lang']) ? \Yii::$app->session['lang'] : 'en-US';
+$application -> language = isset(\Yii::$app->session['lang']) ? \Yii::$app->session['lang'] : 'zh-CN';
 $application->run();

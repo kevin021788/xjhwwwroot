@@ -5,13 +5,8 @@ return [
         'description' => '拥有所有后台管理权限',
         'children' => [
             '所有权限',
-            '新闻管理',
-            '商家管理',
-            '系统管理',
             '/admin/*',
             '/site/*',
-            '/bemanage/album/*',
-            '/bemanage/album-pics/*',
             '/bemanage/client/*',
             '/bemanage/competition/*',
             '/bemanage/index/*',
@@ -20,8 +15,6 @@ return [
             '/bemanage/score/*',
             '/bemanage/shop/*',
             '/bemanage/slider/*',
-            '/bemanage/team/*',
-            '/bemanage/team-member/*',
             '/bemanage/upload/*',
             '/bemanage/user/*',
             '/bemanage/vote/*',
@@ -29,42 +22,13 @@ return [
             '/admin/user/logout',
             '/admin/user/signup',
             '/admin/user/change-password',
-            '/bemanage/system/index',
-            '/bemanage/system/view',
-            '/bemanage/system/create',
-            '/bemanage/system/update',
-            '/bemanage/system/delete',
-            '/bemanage/system/*',
-            '/bemanage/team-leader/index',
-            '/bemanage/team-leader/view',
-            '/bemanage/team-leader/create',
-            '/bemanage/team-leader/update',
-            '/bemanage/team-leader/delete',
-            '/bemanage/team-leader/*',
-            '/bemanage/share/index',
-            '/bemanage/share/view',
-            '/bemanage/share/create',
-            '/bemanage/share/update',
-            '/bemanage/share/delete',
-            '/bemanage/share/*',
-            '/bemanage/team-competition/index',
-            '/bemanage/team-competition/view',
-            '/bemanage/team-competition/create',
-            '/bemanage/team-competition/update',
-            '/bemanage/team-competition/delete',
-            '/bemanage/team-competition/*',
         ],
     ],
     '所有权限' => [
         'type' => 2,
         'children' => [
-            '新闻管理',
-            '商家管理',
-            '系统管理',
             '/admin/*',
             '/site/*',
-            '/bemanage/album/*',
-            '/bemanage/album-pics/*',
             '/bemanage/client/*',
             '/bemanage/competition/*',
             '/bemanage/index/*',
@@ -73,8 +37,6 @@ return [
             '/bemanage/score/*',
             '/bemanage/shop/*',
             '/bemanage/slider/*',
-            '/bemanage/team/*',
-            '/bemanage/team-member/*',
             '/bemanage/upload/*',
             '/bemanage/user/*',
             '/bemanage/vote/*',
@@ -82,30 +44,6 @@ return [
             '/admin/user/logout',
             '/admin/user/signup',
             '/admin/user/change-password',
-            '/bemanage/system/index',
-            '/bemanage/system/view',
-            '/bemanage/system/create',
-            '/bemanage/system/update',
-            '/bemanage/system/delete',
-            '/bemanage/system/*',
-            '/bemanage/team-leader/index',
-            '/bemanage/team-leader/view',
-            '/bemanage/team-leader/create',
-            '/bemanage/team-leader/update',
-            '/bemanage/team-leader/delete',
-            '/bemanage/team-leader/*',
-            '/bemanage/share/index',
-            '/bemanage/share/view',
-            '/bemanage/share/create',
-            '/bemanage/share/update',
-            '/bemanage/share/delete',
-            '/bemanage/share/*',
-            '/bemanage/team-competition/index',
-            '/bemanage/team-competition/view',
-            '/bemanage/team-competition/create',
-            '/bemanage/team-competition/update',
-            '/bemanage/team-competition/delete',
-            '/bemanage/team-competition/*',
             '/bemanage/about/index',
             '/bemanage/about/view',
             '/bemanage/about/create',
@@ -124,7 +62,6 @@ return [
             '/bemanage/category/update',
             '/bemanage/category/delete',
             '/bemanage/category/*',
-            '/lang/language',
             '/lang/*',
             '/bemanage/product/*',
             '/bemanage/config/index',
@@ -146,18 +83,62 @@ return [
             '/bemanage/banner/*',
             '/bemanage/banner/delete-all',
             '/bemanage/banner/change-status',
+            '/bemanage/service/upload',
+            '/bemanage/service/index',
+            '/bemanage/service/view',
+            '/bemanage/service/create',
+            '/bemanage/service/update',
+            '/bemanage/service/delete',
+            '/bemanage/service/delete-all',
+            '/bemanage/service/change-status',
+            '/bemanage/about/upload',
+            '/bemanage/cases/upload',
+            '/bemanage/cases/index',
+            '/bemanage/cases/view',
+            '/bemanage/cases/create',
+            '/bemanage/cases/update',
+            '/bemanage/cases/delete',
+            '/bemanage/cases/delete-all',
+            '/bemanage/cases/change-status',
+            '/bemanage/cases/*',
+            '/bemanage/contact/upload',
+            '/bemanage/index/index',
+            '/bemanage/news/upload',
+            '/bemanage/news/index',
+            '/bemanage/news/view',
+            '/bemanage/news/create',
+            '/bemanage/news/update',
+            '/bemanage/news/delete',
+            '/bemanage/news/delete-all',
+            '/bemanage/news/change-status',
+            '/bemanage/upload/image',
+            '/bemanage/upload/file',
+            '/bemanage/upload/delete-pic',
+            '/lang/language',
+            '/bemanage/partner/upload',
+            '/bemanage/partner/index',
+            '/bemanage/partner/view',
+            '/bemanage/partner/create',
+            '/bemanage/partner/update',
+            '/bemanage/partner/delete',
+            '/bemanage/partner/delete-all',
+            '/bemanage/partner/change-status',
+            '/bemanage/partner/*',
+            '/bemanage/culture/upload',
+            '/bemanage/culture/index',
+            '/bemanage/culture/view',
+            '/bemanage/culture/create',
+            '/bemanage/culture/update',
+            '/bemanage/culture/delete',
+            '/bemanage/culture/delete-all',
+            '/bemanage/culture/change-status',
+            '/bemanage/culture/*',
         ],
     ],
     '/admin/*' => [
         'type' => 2,
     ],
     '/site/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/album/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/album-pics/*' => [
         'type' => 2,
     ],
     '/bemanage/client/*' => [
@@ -184,12 +165,6 @@ return [
     '/bemanage/slider/*' => [
         'type' => 2,
     ],
-    '/bemanage/team/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-member/*' => [
-        'type' => 2,
-    ],
     '/bemanage/upload/*' => [
         'type' => 2,
     ],
@@ -198,32 +173,6 @@ return [
     ],
     '/bemanage/vote/*' => [
         'type' => 2,
-    ],
-    '新闻管理' => [
-        'type' => 2,
-        'children' => [
-            '/bemanage/news/*',
-        ],
-    ],
-    '商家管理' => [
-        'type' => 2,
-        'children' => [
-            '/bemanage/shop/*',
-        ],
-    ],
-    '系统管理' => [
-        'type' => 2,
-        'children' => [
-            '/bemanage/client/*',
-            '/bemanage/rule/*',
-            '/bemanage/slider/*',
-            '/bemanage/upload/*',
-            '/bemanage/user/*',
-            '/bemanage/vote/*',
-            '/bemanage/system/*',
-            '/bemanage/share/*',
-            '/bemanage/team-leader/*',
-        ],
     ],
     '普通访客' => [
         'type' => 1,
@@ -236,8 +185,6 @@ return [
         'type' => 1,
         'description' => '拥有一般的内容编辑权限',
         'children' => [
-            '新闻管理',
-            '商家管理',
             '/bemanage/slider/*',
             '/bemanage/rule/*',
             '/bemanage/index/*',
@@ -256,78 +203,6 @@ return [
         'type' => 2,
     ],
     '/admin/user/change-password' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/index' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/view' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/create' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/update' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/delete' => [
-        'type' => 2,
-    ],
-    '/bemanage/system/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/index' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/view' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/create' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/update' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/delete' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-leader/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/index' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/view' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/create' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/update' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/delete' => [
-        'type' => 2,
-    ],
-    '/bemanage/share/*' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/index' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/view' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/create' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/update' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/delete' => [
-        'type' => 2,
-    ],
-    '/bemanage/team-competition/*' => [
         'type' => 2,
     ],
     '/bemanage/about/index' => [
@@ -382,9 +257,6 @@ return [
         'type' => 2,
     ],
     '/bemanage/category/*' => [
-        'type' => 2,
-    ],
-    '/lang/language' => [
         'type' => 2,
     ],
     '/lang/*' => [
@@ -472,6 +344,132 @@ return [
         'type' => 2,
     ],
     '/bemanage/service/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/about/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/cases/*' => [
+        'type' => 2,
+    ],
+    '/bemanage/contact/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/index/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/news/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/upload/image' => [
+        'type' => 2,
+    ],
+    '/bemanage/upload/file' => [
+        'type' => 2,
+    ],
+    '/bemanage/upload/delete-pic' => [
+        'type' => 2,
+    ],
+    '/lang/language' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/partner/*' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/culture/*' => [
         'type' => 2,
     ],
 ];

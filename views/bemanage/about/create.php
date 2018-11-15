@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\About */
 
 $this->title = Yii::t('common', 'Create About');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('common', 'Abouts'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('common', 'About'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="about-create">
