@@ -23,9 +23,11 @@ if(!function_exists('dropDown'))
             //分类模块选择
             'model'=> [
                 'about'=>'关于我们',
-                'service'=>'服务项目',
-                'product'=>'产品展示',
-                'news'=>'新闻中心',
+                'service'=>'钜禾服务',
+                'cases'=>'案例赏析',
+                'culture'=>'文化传播',
+                'partner'=>'合作伙伴',
+                'process'=>'合作流程',
                 'contact'=>'联系我们',
                 'banner'=>'轮播图',
             ],

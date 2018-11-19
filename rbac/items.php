@@ -133,6 +133,19 @@ return [
             '/bemanage/culture/delete-all',
             '/bemanage/culture/change-status',
             '/bemanage/culture/*',
+            '/bemanage/about/delete-all',
+            '/bemanage/about/change-status',
+            '/bemanage/contact/delete-all',
+            '/bemanage/contact/change-status',
+            '/bemanage/process/upload',
+            '/bemanage/process/index',
+            '/bemanage/process/view',
+            '/bemanage/process/create',
+            '/bemanage/process/update',
+            '/bemanage/process/delete',
+            '/bemanage/process/delete-all',
+            '/bemanage/process/change-status',
+            '/bemanage/process/*',
         ],
     ],
     '/admin/*' => [
@@ -470,6 +483,45 @@ return [
         'type' => 2,
     ],
     '/bemanage/culture/*' => [
+        'type' => 2,
+    ],
+    '/bemanage/about/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/about/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/contact/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/contact/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/upload' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/process/*' => [
         'type' => 2,
     ],
 ];

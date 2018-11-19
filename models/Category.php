@@ -48,14 +48,14 @@ class Category extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'parentId' => 'Parent ID',
-            'idPath' => 'Id Path',
-            'name' => 'Name',
-            'model' => 'Model',
-            'sort' => 'Sort',
-            'status' => 'Status',
-            'language' => 'Language',
+            'id' => Yii::t('common','ID'),
+            'parentId' => Yii::t('common','Parent ID'),
+            'idPath' => Yii::t('common','Id Path'),
+            'name' => Yii::t('common','Name'),
+            'model' => Yii::t('common','Model'),
+            'sort' => Yii::t('common','Sort'),
+            'status' => Yii::t('common','Status'),
+            'language' => Yii::t('common','Language'),
         ];
     }
 

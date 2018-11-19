@@ -8,7 +8,7 @@ use kartik\widgets\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = Yii::t('common', 'Banners');
+$this->title = Yii::t('common', 'Banner');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="banner-index">
@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'categoryId',
+                'label'=> Yii::t('common','Category'),
                 'value' => 'category.name',
                 'filter' => \app\models\Category::getCategory($this->context->id),
             ],

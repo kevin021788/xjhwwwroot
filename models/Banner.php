@@ -109,17 +109,17 @@ class Banner extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id' => Yii::t('home','ID'),
             'cat_id' => Yii::t('home','Cat ID'),
-            'name' => 'Name',
-            'imgUrl' => 'Img Url',
-            'desc' => 'Desc',
-            'url' => 'Url',
-            'sort' => 'Sort',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'language' => 'Language',
+            'name' => Yii::t('home','Name'),
+            'imgUrl' => Yii::t('home','Img Url'),
+            'desc' => Yii::t('home','Desc'),
+            'url' => Yii::t('home','Url'),
+            'sort' => Yii::t('home','Sort'),
+            'status' => Yii::t('home','Status'),
+            'created_at' => Yii::t('home','Created At'),
+            'updated_at' => Yii::t('home','Updated At'),
+            'language' => Yii::t('home','Language'),
         ];
     }
 

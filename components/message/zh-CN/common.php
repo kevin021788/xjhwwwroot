@@ -32,6 +32,7 @@ return [
     'Select a Category ...' => '选择一个分类……',
     'Select Tags ...' => '选择标签……',
     'Please input name ...' => '请输入名称……',
+    'Please input Url ...' => '请输入链接，如：http://www.xxx.com……',
     'Please input describe ...' => '请输入简介……',
     'Please input seo keyword ...' => '请输入SEO关键字……',
     'Please input seo description ...' => '请输入SEO描述……',
@@ -92,6 +93,16 @@ return [
     'Contact List' => '联系我们列表',
     'Contact' => '联系我们',
 
+    //合作流程
+    'Create Process' => '创建流程',
+    'Process List' => '流程列表',
+    'Process' => '合作流程',
+
+    //轮播图
+    'Create Banner' => '创建轮播图',
+    'Banner List' => '轮播图列表',
+    'Banner' => '轮播图',
+
 
     //计划任务
     'Crontab ID' => '任务ID',
@@ -124,11 +135,10 @@ return [
 
 
     //Category
-    'Category ID' => '分类ID',
-    'Category ParentID' => '分类父ID',
-    'Category Id Path' => '分类ID路径',
-    'Category Name' => '分类名称',
-    'Model Name' => '模块名称',
+    'Parent ID' => '分类',
+    'Id Path' => 'ID路径',
+    'Model' => '模块名称',
+    'Name' => '名称',
     'Categories' => '分类列表',
     'Category' => '分类',
     'Create Category' => '创建分类',

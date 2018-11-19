@@ -25,6 +25,7 @@ return [
     'Desc' => '简介',
     'Content' => '内容',
     'Sort' => '排序',
+    'Url' => '链接',
     'Status' => '状态',
     'Created At' => '创建时间',
     'Updated At' => '更新时间',

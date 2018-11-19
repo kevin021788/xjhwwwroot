@@ -5,13 +5,13 @@ use kartik\detail\DetailView;
 use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Service */
+/* @var $model app\models\Process */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Service', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Process', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="service-view">
+<div class="process-view">
 
     <?= DetailView::widget([
         'model' => $model,

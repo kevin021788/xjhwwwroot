@@ -8,7 +8,7 @@ use yii\helpers\Url;
 use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Service */
+/* @var $model app\models\Process */
 /* @var $form yii\widgets\ActiveForm */
 
 $previmage = [];
@@ -28,7 +28,7 @@ if(!empty($imgUrl)) {
 $category = isset($related['category'])?ArrayHelper::getValue($related['category'],'id'):'';//单选时用字符值
 ?>
 
-<div class="service-form">
+<div class="process-form">
 
     <?php $form = ActiveForm::begin(['type'=>ActiveForm::TYPE_HORIZONTAL, 'options'=>['enctype'=>'multipart/form-data']]);
     $mo = \app\models\Config::findOne(['name'=>'WEB_SITE_ALLOW_UPLOAD_TYPE','language'=>\app\components\message\Language::getLanguageNum()]);

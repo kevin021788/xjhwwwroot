@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Service */
+/* @var $model app\models\Process */
 
-$this->title = Yii::t('common', 'Create Service');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('common', 'Service'), 'url' => ['index']];
+$this->title = Yii::t('common', 'Create Process');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('common', 'Process'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="service-create">
+<div class="process-create">
 
     <?= $this->render('_form', [
         'model' => $model,

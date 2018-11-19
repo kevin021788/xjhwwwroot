@@ -65,7 +65,7 @@ $category = isset($related['category'])?ArrayHelper::getValue($related['category
 
             'desc'=>['type'=> Form::INPUT_TEXTAREA, 'options'=>['placeholder'=> Yii::t('common','Please input describe ...'), 'maxlength'=>255]],
 
-            'url'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=> Yii::t('common','Please input name ...'), 'maxlength'=>255]],
+            'url'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=> Yii::t('common','Please input Url ...'), 'maxlength'=>255]],
 
         ]
 

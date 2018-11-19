@@ -8,10 +8,10 @@ use kartik\widgets\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = Yii::t('common', 'Service');
+$this->title = Yii::t('common', 'Process');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="service-index">
+<div class="process-index">
     <?php Pjax::begin(); ?>
     <div class="box-header with-border">
     </div>
