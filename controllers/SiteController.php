@@ -7,6 +7,8 @@ use app\models\About;
 use app\models\Banner;
 use app\models\Category;
 use app\models\Contact;
+use app\models\Culture;
+use app\models\Partner;
 use app\models\Product;
 use app\models\Service;
 use Yii;
@@ -47,13 +49,13 @@ class SiteController extends Controller
         $config = Yii::$app->cache->get('config_'.\app\components\message\Language::getLanguageNum());
         $banner = \app\models\Banner::getBanner('home');
 
-        $product = Product::getIndexList(4);
+        $product = Partner::getIndexList(4);
 
         $serviceCate = Category::getCategoryList('service');
 
         $about = About::findOne(Language::getLanguageNum());
 
-        $news = News::getIndexList(2);
+        $news = Culture::getIndexList(2);
 
         return $this->render('index', [
             'config' => $config,
@@ -95,15 +97,15 @@ class SiteController extends Controller
         ]);
     }
     /**
-     * 新闻列表
+     * 文化传播列表
      * @return string
      */
-    public function actionNews()
+    public function actionCulture()
     {
-        $md = 'news';
+        $md = 'culture';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = new News();
+        $model = new Culture();
         $ret = $model::getList();
         if($ret['success'])
         {
@@ -129,16 +131,16 @@ class SiteController extends Controller
     }
 
     /**
-     * 新闻详情
+     * 文化传播详情
      * @param $id
      * @return string|\yii\web\Response
      */
-    public function actionNewsDetail($id)
+    public function actionCultureDetail($id)
     {
         $md = 'news';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = News::getDetail($id);
+        $model = Culture::getDetail($id);
         if (empty($model)) {
             return $this->redirect(['news']);
         } else {
@@ -159,7 +161,7 @@ class SiteController extends Controller
         $md = 'product';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = new Product();
+        $model = new Partner();
         $ret = $model::getList();
         if($ret['success'])
         {
@@ -194,7 +196,7 @@ class SiteController extends Controller
         $md = 'product';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
-        $model = Product::getDetail($id);
+        $model = Partner::getDetail($id);
         if (empty($model)) {
             return $this->redirect(['product']);
         } else {

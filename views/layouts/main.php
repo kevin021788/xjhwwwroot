@@ -52,9 +52,11 @@ if(empty($config))
         'items' => [
             ['label' => Yii::t('home','Home'), 'url' => ['/site/index']],
             ['label' => Yii::t('home','About Us'), 'url' => ['/site/about']],
-            ['label' => Yii::t('home','Service Item'), 'url' => ['/site/service']],
-            ['label' => Yii::t('home','Product Display'), 'url' => ['/site/product']],
-            ['label' => Yii::t('home','News'), 'url' => ['/site/news']],
+            ['label' => Yii::t('home','Service'), 'url' => ['/site/service']],
+            ['label' => Yii::t('home','Cases'), 'url' => ['/site/cases']],
+            ['label' => Yii::t('home','Culture'), 'url' => ['/site/culture']],
+            ['label' => Yii::t('home','Partner'), 'url' => ['/site/partner']],
+            ['label' => Yii::t('home','Process'), 'url' => ['/site/process']],
             ['label' => Yii::t('home','Contact Us'), 'url' => ['/site/contact']],
             ['label' => '<i style="vertical-align: middle;" class="lang-flag flag-'.(\app\components\message\Language::getLanguageNum()==2 ? 'en-US' : 'fa') .'"></i>'.Yii::t('home',(\app\components\message\Language::getLanguageNum()==2) ? 'English' : 'Farsi' ),
                 'items' => (\app\components\message\Language::getLanguageNum()==2)?[
