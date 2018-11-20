@@ -17,6 +17,22 @@ if(empty($config))
     $config = getWebConfig();
     Yii::$app->cache->set('config_' . \app\components\message\Language::getLanguageNum(),$config);
 }
+if(isset($this->params['keyword']) && !empty($this->params['keyword']))
+{
+    $keyword = $this->params['keyword'];
+}
+else
+{
+    $keyword = $config['WEB_SITE_KEYWORD'];
+}
+if(isset($this->params['description']) && !empty($this->params['description']))
+{
+    $description = $this->params['description'];
+}
+else
+{
+    $description = $config['WEB_SITE_DESCRIPTION'];
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -27,8 +43,8 @@ if(empty($config))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <meta name="keywords" content="<?=Html::encode($config['WEB_SITE_KEYWORD'])?>">
-    <meta name="description" content="<?=Html::encode($config['WEB_SITE_DESCRIPTION'])?>">
+    <meta name="keywords" content="<?=Html::encode($keyword)?>">
+    <meta name="description" content="<?=Html::encode($description)?>">
     <link href="/css/web.css" rel="stylesheet">
     <?php $this->head() ?>
 </head>
