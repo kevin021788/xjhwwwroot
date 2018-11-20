@@ -129,3 +129,43 @@ if(!function_exists('pKeyword'))
         return $string;
     }
 }
+/**
+ * 二级分类NAV的ITEMS
+ * 当bool等于TRUE时返回所在模块的分类列表，否则是内容列表
+ */
+if(!function_exists('getModelItems'))
+{
+    function getModelItems($model,$bool=false)
+    {
+        $items = [];
+        if(empty($bool))
+        {
+            $controller = '\\app\\models\\'.(ucfirst($model));
+            $tree = $controller::getCategory();
+
+            foreach ($tree as $k => $v) {
+                $params = array_merge(['site/'.$model,'id' => $v['id']]);
+                $label = $v['name'];
+                $url = yii\helpers\Url::to($params);
+                $items[] = [
+                    'label' => $label,
+                    'url' => $url,
+                ];
+            }
+        }else{
+            $tree = \app\models\Category::getCategoryList($model);
+            foreach ($tree as $k => $v) {
+                $params = array_merge(['site/'.$model,'cat_id' => $v['id']]);
+                $label = $v['name'];
+                $url = yii\helpers\Url::to($params);
+                $items[] = [
+                    'label' => $label,
+                    'url' => $url,
+                ];
+            }
+        }
+
+        return $items;
+
+    }
+}

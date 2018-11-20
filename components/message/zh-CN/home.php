@@ -8,9 +8,11 @@
 return [
     'Home' => '首页',
     'About Us' => '关于我们',
-    'Shipping' => 'Shipping',
     'Service' => '钜禾服务',
-    'News' => 'News',
+    'Cases' => '安全欣赏',
+    'Culture' => '文化传播',
+    'Partner' => '合作伙伴',
+    'Process' => '合作流程',
     'Contact Us' => '联系我们',
     'Farsi' => 'Farsi',
     'Query failure' => '查询失败',

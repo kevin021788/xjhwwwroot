@@ -77,11 +77,14 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $id = Yii::$app->request->get('id', 0);
         $banner = \app\models\Banner::getBanner('about');
 
-        $model = About::findOne(Language::getLanguageNum());
+        $model = About::getDetail($id);
+        $category = About::getCategory();
         return $this->render('about',[
             'model' => $model,
+            'category' => $category,
             'banner' => $banner,
         ]);
     }
@@ -92,11 +95,14 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $banner = \app\models\Banner::getBanner('about');
+        $id = Yii::$app->request->get('id', 0);
+        $banner = \app\models\Banner::getBanner('contact');
 
-        $model = Contact::findOne(Language::getLanguageNum());
+        $model = Contact::getDetail($id);
+        $category = Contact::getCategory();
         return $this->render('contact',[
             'model' => $model,
+            'category' => $category,
             'banner' => $banner,
         ]);
     }
@@ -115,7 +121,7 @@ class SiteController extends Controller
         {
             $list = $ret['list'];
             $pages = $ret['pages'];
-            return $this->render('newsList',[
+            return $this->render('cultureList',[
                 'model' => $model,
                 'list' => $list,
                 'pages' => $pages,
@@ -125,7 +131,7 @@ class SiteController extends Controller
         }
         else
         {
-            return $this->render('newsList',[
+            return $this->render('cultureList',[
                 'list' => [],
                 'banner' => $banner,
                 'category' => $category,
@@ -141,14 +147,14 @@ class SiteController extends Controller
      */
     public function actionCultureDetail($id)
     {
-        $md = 'news';
+        $md = 'culture';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
         $model = Culture::getDetail($id);
         if (empty($model)) {
-            return $this->redirect(['news']);
+            return $this->redirect(['culture']);
         } else {
-            return $this->render('newsDetail', [
+            return $this->render('cultureDetail', [
                 'model' => $model,
                 'banner' => $banner,
                 'category' => $category,
@@ -157,12 +163,12 @@ class SiteController extends Controller
     }
 
     /**
-     * 产品列表
+     * 案例列表
      * @return string
      */
-    public function actionProduct()
+    public function actionCases()
     {
-        $md = 'product';
+        $md = 'cases';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
         $model = new Partner();
@@ -171,7 +177,7 @@ class SiteController extends Controller
         {
             $list = $ret['list'];
             $pages = $ret['pages'];
-            return $this->render('productList',[
+            return $this->render('casesList',[
                 'model' => $model,
                 'list' => $list,
                 'pages' => $pages,
@@ -181,7 +187,7 @@ class SiteController extends Controller
         }
         else
         {
-            return $this->render('productList',[
+            return $this->render('casesList',[
                 'list' => [],
                 'banner' => $banner,
                 'category' => $category,
@@ -191,20 +197,20 @@ class SiteController extends Controller
     }
 
     /**
-     * 产品详情
+     * 案例详情
      * @param $id
      * @return string|\yii\web\Response
      */
-    public function actionProductDetail($id)
+    public function actionCasesDetail($id)
     {
-        $md = 'product';
+        $md = 'cases';
         $banner = \app\models\Banner::getBanner($md);
         $category = Category::getCategoryList($md);
         $model = Partner::getDetail($id);
         if (empty($model)) {
-            return $this->redirect(['product']);
+            return $this->redirect(['cases']);
         } else {
-            return $this->render('productDetail', [
+            return $this->render('casesDetail', [
                 'model' => $model,
                 'banner' => $banner,
                 'category' => $category,

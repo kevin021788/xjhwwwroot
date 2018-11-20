@@ -195,16 +195,21 @@ class Cases extends \yii\db\ActiveRecord
      */
     public static function getDetail($id)
     {
-        return self::find()->where(['id' => $id, 'status' => 1])->asArray()->one();
+        return self::getModel()->andWhere(['id'=>$id])->one();
     }
 
     /**
-     * 首页新闻
+     * 首页
      * @param int $limit
      * @return array|ActiveRecord[]
      */
     public static function getIndexList($limit=6)
     {
-        return self::find()->where(['status' => 1,'language'=>Language::getLanguageNum()])->orderBy(['sort' => 'asc', 'id' => 'desc'])->limit($limit)->asArray()->all();
+        return self::getModel()->orderBy(['sort' => 'asc', 'id' => 'desc'])->limit($limit)->asArray()->all();
+    }
+
+    private static function getModel()
+    {
+        return self::find()->where(['status'=>1,'language'=>Language::getLanguageNum()]);
     }
 }

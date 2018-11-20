@@ -62,26 +62,26 @@ else
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left nav'],
         'encodeLabels' => false,
         'items' => [
             ['label' => Yii::t('home','Home'), 'url' => ['/site/index']],
-            ['label' => Yii::t('home','About Us'), 'url' => ['/site/about']],
-            ['label' => Yii::t('home','Service'), 'url' => ['/site/service']],
-            ['label' => Yii::t('home','Cases'), 'url' => ['/site/cases']],
-            ['label' => Yii::t('home','Culture'), 'url' => ['/site/culture']],
-            ['label' => Yii::t('home','Partner'), 'url' => ['/site/partner']],
-            ['label' => Yii::t('home','Process'), 'url' => ['/site/process']],
-            ['label' => Yii::t('home','Contact Us'), 'url' => ['/site/contact']],
-            ['label' => '<i style="vertical-align: middle;" class="lang-flag flag-'.(\app\components\message\Language::getLanguageNum()==2 ? 'en-US' : 'fa') .'"></i>'.Yii::t('home',(\app\components\message\Language::getLanguageNum()==2) ? 'English' : 'Farsi' ),
-                'items' => (\app\components\message\Language::getLanguageNum()==2)?[
-                    ['label' => '<i style="vertical-align: middle;" class="lang-flag flag-fa"></i>'.Yii::t('home','Farsi'), 'url' => ['/lang/language?lang=fa'],'options' => ['class' =>'lang'],],
-                ]:[
-                    ['label' => '<i style="vertical-align: middle;" class="lang-flag flag-en-US"></i>'.Yii::t('home','English'), 'url' => ['/lang/language?lang=en-US'],'options' => ['class' =>'lang'],],
-                ],
-                'options' => ['class' =>'lang'],
-            ],
+            ['label' => Yii::t('home','About Us'), 'url' => ['/site/about'],
+                'items' => getModelItems('about')],
+            ['label' => Yii::t('home','Service'), 'url' => ['/site/service'],
+                'items' => getModelItems('service'),],
+            ['label' => Yii::t('home','Cases'), 'url' => ['/site/cases'],
+                'items' => getModelItems('cases',true),],
+            ['label' => Yii::t('home','Culture'), 'url' => ['/site/culture'],
+                'items' => getModelItems('culture',true),],
+            ['label' => Yii::t('home','Partner'), 'url' => ['/site/partner'],
+                'items' => getModelItems('partner',true),],
+            ['label' => Yii::t('home','Process'), 'url' => ['/site/process'],
+                'items' => getModelItems('process'),],
+            ['label' => Yii::t('home','Contact Us'), 'url' => ['/site/contact'],
+                'items' => getModelItems('contact'),],
         ],
     ]);
     NavBar::end();

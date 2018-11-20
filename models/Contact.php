@@ -131,4 +131,35 @@ class Contact extends \yii\db\ActiveRecord
             'language' => Yii::t('home','Language'),
         ];
     }
+
+    /**
+     * 获取详情
+     * @param $id
+     * @return array|null|ActiveRecord
+     */
+    public static function getDetail($id)
+    {
+        $model = self::getModel();
+        if(empty($id)){
+            $rs = $model->orderBy(['sort'=>'asc','id'=>'desc'])->one();
+        }else{
+            $rs = $model->andWhere(['id' => $id])->one();
+        }
+        return $rs;
+    }
+    /**
+     * 获取下拉分类列表
+     * @return array|ActiveRecord[]
+     */
+    public static function getCategory()
+    {
+        $model = self::getModel();
+        $rs = $model->select(['id','name'])->asArray()->all();
+        return $rs;
+    }
+
+    private static function getModel()
+    {
+        return self::find()->where(['status' => 1, 'language' => Language::getLanguageNum()]);
+    }
 }
