@@ -104,3 +104,28 @@ if(!function_exists('getUEditorConfig'))
         ];
     }
 }
+if(!function_exists('pKeyword'))
+{
+    function pKeyword($string,$bool=false)
+    {
+        $kw = \app\models\Pkey::getKeyword();
+        if($kw)
+        {
+
+            if($bool)
+            {
+                foreach ($kw as $k => $v) {
+                    if(empty($v)) continue;
+                    $string = str_replace('<a href="' . $k . '" target="_blank">' . $v . '</a>', $v, $string);
+                }
+            }else
+            {
+                foreach ($kw as $k => $v) {
+                    if(empty($v)) continue;
+                    $string = str_replace($v, '<a href="' . $k . '" target="_blank">' . $v . '</a>', $string);
+                }
+            }
+        }
+        return $string;
+    }
+}

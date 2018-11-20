@@ -146,6 +146,14 @@ return [
             '/bemanage/process/delete-all',
             '/bemanage/process/change-status',
             '/bemanage/process/*',
+            '/bemanage/pkey/index',
+            '/bemanage/pkey/view',
+            '/bemanage/pkey/create',
+            '/bemanage/pkey/update',
+            '/bemanage/pkey/delete',
+            '/bemanage/pkey/delete-all',
+            '/bemanage/pkey/change-status',
+            '/bemanage/pkey/*',
         ],
     ],
     '/admin/*' => [
@@ -522,6 +530,30 @@ return [
         'type' => 2,
     ],
     '/bemanage/process/*' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/index' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/view' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/create' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/update' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/delete' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/delete-all' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/change-status' => [
+        'type' => 2,
+    ],
+    '/bemanage/pkey/*' => [
         'type' => 2,
     ],
 ];
