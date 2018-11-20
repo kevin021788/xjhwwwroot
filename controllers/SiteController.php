@@ -9,6 +9,7 @@ use app\models\Category;
 use app\models\Contact;
 use app\models\Culture;
 use app\models\Partner;
+use app\models\Process;
 use app\models\Product;
 use app\models\Service;
 use Yii;
@@ -88,6 +89,43 @@ class SiteController extends Controller
             'banner' => $banner,
         ]);
     }
+
+    /**
+     * 钜新服务
+     * @return string
+     */
+    public function actionService()
+    {
+        $id = Yii::$app->request->get('id', 0);
+        $banner = \app\models\Banner::getBanner('service');
+
+        $model = Service::getDetail($id);
+        $category = Service::getCategory();
+        return $this->render('service',[
+            'model' => $model,
+            'category' => $category,
+            'banner' => $banner,
+        ]);
+    }
+
+    /**
+     * 合作流程
+     * @return string
+     */
+    public function actionProcess()
+    {
+        $id = Yii::$app->request->get('id', 0);
+        $banner = \app\models\Banner::getBanner('process');
+
+        $model = Process::getDetail($id);
+        $category = Process::getCategory();
+        return $this->render('process',[
+            'model' => $model,
+            'category' => $category,
+            'banner' => $banner,
+        ]);
+    }
+
 
     /**
      * 联系我们
@@ -218,61 +256,6 @@ class SiteController extends Controller
         }
     }
 
-    /**
-     * 服务项目列表
-     * @return string
-     */
-    public function actionService()
-    {
-        $md = 'service';
-        $banner = \app\models\Banner::getBanner($md);
-        $category = Category::getCategoryList($md);
-        $model = new Service();
-        $ret = $model::getList();
-        if($ret['success'])
-        {
-            $list = $ret['list'];
-            $pages = $ret['pages'];
-            return $this->render('serviceList',[
-                'model' => $model,
-                'list' => $list,
-                'pages' => $pages,
-                'banner' => $banner,
-                'category' => $category,
-            ]);
-        }
-        else
-        {
-            return $this->render('serviceList',[
-                'list' => [],
-                'banner' => $banner,
-                'category' => $category,
-            ]);
-        }
-
-    }
-
-    /**
-     * 服务项目详情
-     * @param $id
-     * @return string|\yii\web\Response
-     */
-    public function actionServiceDetail($id)
-    {
-        $md = 'service';
-        $banner = \app\models\Banner::getBanner($md);
-        $category = Category::getCategoryList($md);
-        $model = Service::getDetail($id);
-        if (empty($model)) {
-            return $this->redirect(['service']);
-        } else {
-            return $this->render('serviceDetail', [
-                'model' => $model,
-                'banner' => $banner,
-                'category' => $category,
-            ]);
-        }
-    }
 
     //------------------------------------------------------------------------//
 
