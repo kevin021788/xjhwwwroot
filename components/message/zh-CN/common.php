@@ -64,6 +64,10 @@ return [
     'Project' => '项目',
     'Create Project' => '创建项目',
 
+    //钜禾服务
+    'Create Config' => '创建系统配置',
+    'Configs' => '系统配置列表',
+    'Config' => '系统配置',
 
     //案例
     'Create Cases' => '创建案例',
@@ -84,6 +88,13 @@ return [
     'Create Culture' => '创建文化',
     'Culture List' => '文化列表',
     'Culture' => '文化传播',
+
+
+    //钜禾服务
+    'Create Service' => '创建钜禾服务',
+    'Service List' => '钜禾服务列表',
+    'Service' => '钜禾服务',
+
 
 
     //关于我们
