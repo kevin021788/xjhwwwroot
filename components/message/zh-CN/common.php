@@ -108,6 +108,11 @@ return [
     'Banner List' => '轮播图列表',
     'Banner' => '轮播图',
 
+    //站内关键字
+    'Create Pkey' => '创建关键字',
+    'Pkey List' => '关键字列表',
+    'Pkey' => '站内关键字',
+
 
     //计划任务
     'Crontab ID' => '任务ID',

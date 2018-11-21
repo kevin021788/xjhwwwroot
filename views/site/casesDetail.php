@@ -7,6 +7,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('home','Cases'), 'url' => ['
 $this->params['breadcrumbs'][] = $model['name'];
 $this->params['keyword'] = $model['keyword'];
 $this->params['description'] = $model['description'];
+$this->context->action->id = explode('-', $this->context->action->id)[0];
 ?>
 
 <div class="news-info w1180">

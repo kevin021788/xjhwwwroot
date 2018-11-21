@@ -33,8 +33,8 @@ $banner = \app\models\Banner::getBanner('culture');
         <li class=" col-xs-12 col-sm-12">
             <a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id.'-detail','id'=>$v['id']])?>">
                 <p class="pic col-xs-12 col-sm-3">
-                    <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="bg">
-                    <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="picture">
+                    <img src="<?= empty($v['imgUrl'])?'/img/logo.jpg':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="bg">
+                    <img src="<?= empty($v['imgUrl'])?'/img/logo.jpg':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="picture">
                 </p>
                 <span class="con col-xs-12 col-sm-9">
     							<h3><?=empty($v['created_at'])?'':date('m-d',$v['created_at']) ?></h3>

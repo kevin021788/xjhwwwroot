@@ -41,7 +41,7 @@ $ct = yiiParams('ct');
         <li class="<?=$ct[$b]?> col-xs-12 col-sm-3">
             <p class="pic">
                 <a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id.'-detail','id'=>$v['id']])?>">
-                    <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>">
+                    <img src="<?= empty($v['imgUrl'])?'/img/logo.jpg':$v['imgUrl'];?>" alt="<?=$v['name']?>">
                 </a>
             </p>
             <a href="javascript:;" class="shopping" data-link="" data-img=""><span><?=Yii::t('home','View Detail')?></span></a>
