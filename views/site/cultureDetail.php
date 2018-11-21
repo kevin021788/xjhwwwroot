@@ -1,8 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
-$this->title = $model['name'].'-'.strtr((empty($model['keyword']) ? $this->params['config']['WEB_SITE_KEYWORD'] : $model['keyword']), ',', '|').'-'.$this->params['config']['WEB_SITE_TITLE'];
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['culture']];
+$this->title = $model['name'].'-'.strtr((empty($model['keyword']) ? $this->params['config']['WEB_SITE_KEYWORD'] : $model['keyword']), ',', '_').'-'.$this->params['config']['WEB_SITE_TITLE'];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('home','culture'), 'url' => ['culture']];
 $this->params['breadcrumbs'][] = $model['name'];
 $this->params['keyword'] = $model['keyword'];
 $this->params['description'] = $model['description'];

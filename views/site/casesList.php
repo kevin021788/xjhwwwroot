@@ -2,13 +2,13 @@
 use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 
-$this->title = Yii::t('home','Partner List').' | '.$this->params['config']['WEB_SITE_TITLE'];
+$this->title = Yii::t('home','Cases List').' | '.$this->params['config']['WEB_SITE_TITLE'];
 $this->params['breadcrumbs'][] = $this->title;
 $ct = yiiParams('ct');
 ?>
 <div class="news w1180">
 <?= $this->render('banner',['banner'=>$banner])?>
-    <h1 class="title"><span><?=Yii::t('home','Partner')?></span></h1>
+    <h1 class="title"><span><?=Yii::t('home','Cases')?></span></h1>
     <?php
     if($category)
     {
@@ -32,7 +32,7 @@ $ct = yiiParams('ct');
     ?>
 </div>
 <div class="clear"></div>
-<div class="Partner-type-ajax">
+<div class="Cases-type-ajax">
 
     <ul class="f-cb">
         <?php foreach($list as $k=>$v):
@@ -40,13 +40,13 @@ $ct = yiiParams('ct');
             ?>
         <li class="<?=$ct[$b]?> col-xs-12 col-sm-3">
             <p class="pic">
-                <a href="<?php echo yiiUrl('/site/partner-detail?id='.$v['id'])?>">
+                <a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id.'-detail','id'=>$v['id']])?>">
                     <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>">
                 </a>
             </p>
             <a href="javascript:;" class="shopping" data-link="" data-img=""><span><?=Yii::t('home','View Detail')?></span></a>
             <div class="con">
-                <a href="<?php echo yiiUrl('/site/partner-detail?id='.$v['id'])?>">
+                <a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id.'-detail','id'=>$v['id']])?>">
                     <h2><?=$v['name']?></h2>
                 </a>
             </div>

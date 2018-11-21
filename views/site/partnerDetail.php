@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = $model['name'].'-'.strtr($model['keyword'],',','|').'-'.$this->params['config']['WEB_SITE_TITLE'];
+$this->title = $model['name'].'-'.strtr((empty($model['keyword']) ? $this->params['config']['WEB_SITE_KEYWORD'] : $model['keyword']), ',', '_').'-'.$this->params['config']['WEB_SITE_TITLE'];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['Partner']];
 $this->params['breadcrumbs'][] = $model['name'];
 $this->params['keyword'] = $model['keyword'];

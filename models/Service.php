@@ -11,7 +11,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "about".
+ * This is the model class for table "service".
  *
  * @property integer $id
  * @property string $name
@@ -34,7 +34,7 @@ class Service extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%about}}';
+        return '{{%service}}';
     }
     /**
      * 初始化

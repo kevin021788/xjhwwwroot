@@ -2,8 +2,8 @@
 
 /* @var $this yii\web\View */
 
-$this->title = $model['name'].'-'.strtr($model['keyword'],',','|').'-'.$this->params['config']['WEB_SITE_TITLE'];
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['Partner']];
+$this->title = $model['name'].'-'.strtr((empty($model['keyword']) ? $this->params['config']['WEB_SITE_KEYWORD'] : $model['keyword']), ',', '_').'-'.$this->params['config']['WEB_SITE_TITLE'];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('home','Cases'), 'url' => ['cases']];
 $this->params['breadcrumbs'][] = $model['name'];
 $this->params['keyword'] = $model['keyword'];
 $this->params['description'] = $model['description'];
@@ -12,7 +12,7 @@ $this->params['description'] = $model['description'];
 <div class="news-info w1180">
     <?= $this->render('banner',['banner'=>$banner])?>
 
-    <h1 class="title"><span><?=Yii::t('home','Partner')?></span></h1>
+    <h1 class="title"><span><?=Yii::t('home','Cases')?></span></h1>
     <?php
     if($category)
     {

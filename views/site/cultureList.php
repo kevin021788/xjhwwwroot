@@ -31,7 +31,7 @@ $banner = \app\models\Banner::getBanner('culture');
     <ul class="f-cb culture-list">
         <?php foreach($list as $v): ?>
         <li class=" col-xs-12 col-sm-12">
-            <a href="<?php echo yiiUrl('/site/culture-detail?id='.$v['id'])?>">
+            <a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id.'-detail','id'=>$v['id']])?>">
                 <p class="pic col-xs-12 col-sm-3">
                     <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="bg">
                     <img src="<?= empty($v['imgUrl'])?'/img/logo.png':$v['imgUrl'];?>" alt="<?=$v['name']?>" class="picture">
