@@ -64,10 +64,6 @@ return [
     'Project' => '项目',
     'Create Project' => '创建项目',
 
-    //钜禾服务
-    'Create Config' => '创建系统配置',
-    'Configs' => '系统配置列表',
-    'Config' => '系统配置',
 
     //案例
     'Create Cases' => '创建案例',
@@ -163,6 +159,18 @@ return [
     'Categories' => '分类列表',
     'Category' => '分类',
     'Create Category' => '创建分类',
+
+    //系统配置
+    'Create Config' => '创建系统配置',
+    'Configs' => '系统配置列表',
+    'Config' => '系统配置',
+    'ID' => 'ID',
+    'Title' => '标题',
+    'Value' => '内容',
+    'Remark' => '备注',
+    'Created At' => '创建时间',
+    'Updated At' => '更新时间',
+    'Language' => '语言',
 
     //Tag
     'Tag ID' => '标签ID',

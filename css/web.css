@@ -57,7 +57,9 @@ ul,ol {list-style: none outside none;}
         margin: 0px;
         padding: 0px;
     }*/
-
+.fl { float: left !important;}
+.fr { float: right !important;}
+.main { min-height: 500px !important;}
 .wrap .container .sban {
     margin: -5em 0 0 0;
     padding: 0px;
@@ -157,7 +159,7 @@ ul,ol {list-style: none outside none;}
 
 h1.title{
     text-align: center;
-    width: 10em;
+    /*width: 10em;*/
     margin: 1em auto 0 auto;
     background: url(/img/line.jpg) repeat-x center;
     height:3em;
@@ -169,6 +171,7 @@ h1.title span {
     background: #ffffff;
 
 }
+.category { border: 1px #a3a3a3 solid; background: #f0f0f0; padding: 10px;}
 .category ul li {
     float: left;
     /*padding: 0.5em 1em;*/
@@ -176,13 +179,12 @@ h1.title span {
     font-weight: bold;
 }
 .category ul li.cur {
-    background: #7b7b7b url(/img/btn_bg.jpg) repeat-y;
     -moz-border-radius: 2em;
     -webkit-border-radius: 2em;
     border-radius: 2em;
 }
-.category ul li a {
-    color: #333;}
+.category ul li.cur a {color: #f60000;}
+.category ul li a { color: #666666;}
 
 /*news*/
 .news-info-title{
@@ -522,13 +524,22 @@ h1.title span {
 }
 
 body {
-    /*background: #ececec url(../img/bg.jpg) repeat-y center;*/
-    overflow-x: hidden;
+
 }
 .footer { background: #1e1c1d !important;}
 .footer .footer-1{ padding: 10px; text-align: center}
-.footer .footer-1 .footer-logo { background: url(/img/logo.jpg) no-repeat; width: 209px; height: 90px;}
-.footer .footer-1 .footer-nav { }
-.footer .footer-1 .footer-code {}
+.footer .footer-1 a { color: #8f8e8e;}
+.footer .footer-1 .title { background: url(/img/titleicon.png) no-repeat center left; padding-left: 20px; text-align: left; font-size: 16px; font-weight: bold;}
+.footer .footer-1 .footer-logo {}
+.footer .footer-1 .footer-logo .img{ background: url(/img/logo.jpg) no-repeat; width: 209px; height: 90px;}
+.footer .footer-1 .footer-nav,.footer .footer-1 .footer-logo,.footer .footer-1 .footer-code { background: url(/img/y_line.png) repeat-y right; }
+.footer .footer-1 .footer-code { }
 .footer .footer-1 .footer-copyright {}
-.footer .footer-2{ background: #181617; line-height: 50px;}
+.footer .footer-1 .footer-copyright .contact {}
+.footer .footer-1 .footer-copyright .contact .tel {}
+.footer .footer-1 .footer-copyright .contact .tel span{ color: #f60000; font-size: 16px; font-weight: bold;}
+
+.footer .footer-2 { background: #181617; line-height: 50px;}
+.footer .footer-2 .footer-site-nav {float: right; line-height: 50px; overflow:hidden;}
+.footer .footer-2 .footer-site-nav ul {}
+.footer .footer-2 .footer-site-nav ul li {}

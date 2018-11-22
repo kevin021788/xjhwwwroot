@@ -11,14 +11,15 @@ $this->context->action->id = explode('-', $this->context->action->id)[0];
 ?>
 
 <div class="news-info w1180">
-    <?= $this->render('banner',['banner'=>$banner])?>
-
-    <h1 class="title"><span><?=Yii::t('home','Cases')?></span></h1>
+    <div class="col-xs-12 col-md-3"></div>
+    <h1 class="title col-xs-12 col-md-6"><span><?=Yii::t('home','Cases')?></span></h1>
+    <div class="col-xs-12 col-md-3"></div>
+    <div class="clear"></div>
     <?php
     if($category)
     {
         ?>
-        <div class="category">
+        <div class="category col-xs-12 col-md-2 fl">
             <ul>
                 <?php
                 $catId = $model['cat_id'];
@@ -26,7 +27,7 @@ $this->context->action->id = explode('-', $this->context->action->id)[0];
                 {
                     if(empty($v)) continue;
                     ?>
-                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-6 col-sm-2 text-center"><a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id,'cat_id'=>$v['id']])?>"><?=$v['name']?></a></li>
+                    <li class="<?=$catId==$v['id']?'cur':''?> col-xs-6 col-sm-12 text-center"><a href="<?=yiiUrl([$this->context->id.'/'.$this->context->action->id,'cat_id'=>$v['id']])?>"><?=$v['name']?></a></li>
                     <?php
                 }
                 ?>
@@ -35,15 +36,17 @@ $this->context->action->id = explode('-', $this->context->action->id)[0];
         <?php
     }
     ?>
-    <div class="news-info-title">
-        <h2><?=$model['name']?></h2>
-        <div class="box f-cb">
-            <a href="javascript:;" class="data fl"><?= empty($model['created_at'])?'':date('Y-m-d', $model['created_at'])?></a>
+    <div class="main col-xs-12 col-md-10 fr">
+        <div class="news-info-title">
+            <h2><?=$model['name']?></h2>
+            <div class="box f-cb">
+                <a href="javascript:;" class="data fl"><?= empty($model['created_at'])?'':date('Y-m-d', $model['created_at'])?></a>
+            </div>
         </div>
-    </div>
-    <div class="news-info-con">
-        <?=PKeyword($model['content'])?>
+        <div class="news-info-con">
+            <?=PKeyword($model['content'])?>
 
+        </div>
     </div>
 
 </div>

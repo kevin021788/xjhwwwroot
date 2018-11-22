@@ -11,13 +11,15 @@ $this->context->action->id = explode('-', $this->context->action->id)[0];
 
 <div class="culture-info w1180">
     <?= $this->render('banner',['banner'=>$banner])?>
-
-    <h1 class="title"><span><?=Yii::t('home','Culture')?></span></h1>
+    <div class="col-xs-12 col-md-3"></div>
+    <h1 class="title col-xs-12 col-md-6"><span><?=Yii::t('home','Culture')?></span></h1>
+    <div class="col-xs-12 col-md-3"></div>
+    <div class="clear"></div>
     <?php
     if($category)
     {
     ?>
-    <div class="category col-xs-12 col-md-2">
+    <div class="category col-xs-12 col-md-2 fl">
         <ul>
             <?php
             $catId = $model['cat_id'];
@@ -34,7 +36,7 @@ $this->context->action->id = explode('-', $this->context->action->id)[0];
     <?php
     }
     ?>
-    <div class="main col-xs-12 col-md-10">
+    <div class="main col-xs-12 col-md-10 fr">
         <div class="culture-info-title">
             <h2><?=$model['name']?></h2>
             <div class="box f-cb">

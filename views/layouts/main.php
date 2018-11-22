@@ -57,12 +57,12 @@ else
 
     <div class="container">
         <div class="welcome h40">
-            <div class="title white h40 col-xs-12 col-md-6">欢迎光临 <?= $config['WEB_SITE_TITLE'] ?>官网</div>
+            <div class="title white h40 col-xs-12 col-md-6"><?=Yii::t('home','WelCome')?> <?= $config['WEB_SITE_TITLE'] ?><?=Yii::t('home','Official website')?></div>
             <div class="add-home col-xs-12 col-md-5">
                 <ul>
-                    <li class="white h40 col-md-5"><a href="javascript:void(0)" onclick="SetHome(this,window.location)">设为首页</a></li>
+                    <li class="white h40 col-md-5"><a href="javascript:void(0)" onclick="SetHome(this,window.location)"><?=Yii::t('home','Set Home')?></a></li>
                     <li class="white h40 col-md-1">|</li>
-                    <li class="white h40 col-md-5"><a href="javascript:void(0)" onclick="shoucang(document.title,window.location)">加入收藏</a></li>
+                    <li class="white h40 col-md-5"><a href="javascript:void(0)" onclick="shoucang(document.title,window.location)"><?=Yii::t('home','Add Favorite')?></a></li>
                 </ul>
             </div>
         </div>
@@ -99,32 +99,79 @@ else
         <?= $content ?>
     </div>
 </div>
-
 <footer class="footer">
     <div class="container">
         <div class="footer-1">
-            <div class="col-xs-12 col-md-3 footer-logo"></div>
-            <div class="col-xs-12 col-md-3 footer-nav"></div>
-            <div class="col-xs-12 col-md-3 footer-code"></div>
-            <div class="col-xs-12 col-md-3 footer-copyright"></div>
+            <div class="col-xs-12 col-md-3 footer-logo">
+                <div class="img"></div>
+            </div>
+            <div class="col-xs-12 col-md-3 footer-nav">
+                <ul class="culture col-xs-12 col-md-6">
+                    <li class="title white"><?=Yii::t('home','Culture')?></li>
+                    <?php
+                    $cultureCate = \app\models\Category::getCategory('culture');
+                    if(isset($cultureCate))
+                    {
+                        foreach ($cultureCate as $k=>$v)
+                        {
+                            echo "<li class='col-xs-6 col-md-12 white'><a href='".yiiUrl(['/site/culture','cat_id'=>$k])."'>{$v}</a></li>
+                    ";
+                        }
+                    }
+                    ?>
+
+                </ul>
+                <ul class="cases col-xs-12 col-md-6">
+                    <li class="title white"><?=Yii::t('home','Cases')?></li>
+                    <?php
+                    $casesCate = \app\models\Category::getCategory('cases');
+                    if(isset($casesCate))
+                    {
+                        foreach ($casesCate as $k=>$v)
+                        {
+                            echo "<li class='col-xs-6 col-md-12 white'><a href='".yiiUrl(['/site/cases','cat_id'=>$k])."'>{$v}</a></li>
+                    ";
+                        }
+                    }
+                    ?>
+
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-3 footer-code">
+                <ul class="follow col-xs-12 col-md-6">
+                    <li class="title white"><?=Yii::t('home','Follow Us')?></li>
+
+                    <li><img src="/img/ewmcode.jpg"></li>
+                    <li class=" white"><?=Yii::t('home','WeiXin Mp')?></li>
+
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-3 footer-copyright">
+                <ul class="contact col-xs-12 col-md-12">
+                    <li class="title white"><?=Yii::t('home','Contact Us')?></li>
+
+                    <li class="tel col-xs-12 col-md-12 white text-left"><?=Yii::t('home','Service Tel')?><span><?=Html::encode($config['WEB_SITE_TEL'])?></span></li>
+                    <li class="address col-xs-12 col-md-12 white text-left"><?=Yii::t('home','Address')?><?=Html::encode($config['WEB_SITE_ADDRESS'])?></li>
+                    <li class="des col-xs-12 col-md-12 white text-left"><?=Html::encode($config['WEB_SITE_TEL'])?></li>
+
+                </ul>
+            </div>
         </div>
     </div>
-
     <div class="clear"></div>
     <div class="footer-2">
         <div class="container white text-center">
-            <div style="float: right; width: 350px;line-height: 50px; overflow:hidden;">
+            <div class="footer-site-nav col-xs-12 col-md-4">
                 <ul>
-                    <li class="col-xs-3 col-md-3 white">网站地图</li>
-                    <li class="col-xs-3 col-md-3 white">法律声明</li>
-                    <li class="col-xs-3 col-md-3 white">友情链接</li>
-                    <li class="col-xs-3 col-md-3 white">联系我们</li>
+                    <li class="col-xs-6 col-md-3 white"><?=Yii::t('home','Web SiteMap')?></li>
+                    <li class="col-xs-6 col-md-3 white"><?=Yii::t('home','Legal statement')?></li>
+                    <li class="col-xs-6 col-md-3 white"><?=Yii::t('home','Friendship link')?></li>
+                    <li class="col-xs-6 col-md-3 white"><?=Yii::t('home','Contact Us')?></li>
                 </ul>
             </div>
             <?= Html::encode($config['WEB_SITE_COPYRIGHT'])?>
         </div>
     </div>
-
 </footer>
 <?php $this->endBody() ?>
 </body>

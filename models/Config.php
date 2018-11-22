@@ -90,16 +90,16 @@ class Config extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'title' => 'Title',
-            'value' => 'Value',
-            'remark' => 'Remark',
-            'sort' => 'Sort',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'language' => 'Language',
+            'id' => Yii::t('common','ID'),
+            'name' => Yii::t('common','Name'),
+            'title' => Yii::t('common','Title'),
+            'value' => Yii::t('common','Value'),
+            'remark' => Yii::t('common','Remark'),
+            'sort' => Yii::t('common','Sort'),
+            'status' => Yii::t('common','Status'),
+            'created_at' => Yii::t('common','Created At'),
+            'updated_at' => Yii::t('common','Updated At'),
+            'language' => Yii::t('common','Language'),
         ];
     }
     /**

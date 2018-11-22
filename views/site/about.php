@@ -10,8 +10,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="site-about">
     <?= $this->render('banner',['banner'=>$banner])?>
-    <h1 class="title"><span><?= Html::encode($this->title) ?></span></h1>
-    <div class="category col-xs-12 col-md-2">
+    <div class="col-xs-12 col-md-3"></div>
+    <h1 class="title col-xs-12 col-md-6"><span><?= Html::encode($model['name']) ?></span></h1>
+    <div class="col-xs-12 col-md-3"></div>
+    <div class="clear"></div>
+    <div class="category col-xs-12 col-md-2 fl">
         <ul>
             <?php
             if(isset($category))
@@ -19,13 +22,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 foreach ($category as $k=>$v)
                 {
                     if(empty($v)) continue;
-                    echo '<li class="col-xs-12 col-md-12 text-center'.(($v['id']==Yii::$app->request->get('id',0))?' cur':'').'"><a href="'.yiiUrl([$this->context->id.'/'.$this->context->action->id,'id'=>$v['id']]).'">'.$v['name'].'</a></li>';
+                    echo '<li class="col-xs-6 col-md-12 text-center'.(($v['id']==Yii::$app->request->get('id',0))?' cur':'').'"><a href="'.yiiUrl([$this->context->id.'/'.$this->context->action->id,'id'=>$v['id']]).'">'.$v['name'].'</a></li>';
                 }
             }
             ?>
         </ul>
     </div>
-    <div class="content col-xs-12 col-md-10">
+    <div class="main col-xs-12 col-md-10 fr">
         <?=$model['content']?>
     </div>
 </div>

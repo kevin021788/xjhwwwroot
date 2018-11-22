@@ -58,14 +58,14 @@ class SiteController extends Controller
 
         $about = About::findOne(Language::getLanguageNum());
 
-        $news = Culture::getIndexList(2);
+        $culture = Culture::getIndexList(2);
 
         return $this->render('index', [
             'config' => $config,
             'banner' => $banner,
             'serviceCate' => $serviceCate,
             'about' => $about,
-            'news' => $news,
+            'culture' => $culture,
         ]);
     }
 
